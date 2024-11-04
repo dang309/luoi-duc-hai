@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
@@ -135,14 +134,6 @@ export function MobileLayout({
 }
 
 export default function Features() {
-  const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
-
-  const handleItemClick = (index: number) => {
-    setSelectedItemIndex(index);
-  };
-
-  const selectedFeature = items[selectedItemIndex];
-
   return (
     <Container id="features" sx={{ py: { xs: 8, sm: 4 } }}>
       <Typography variant="h2" component="h2" textAlign="center" gutterBottom sx={{ mb: 4 }}>

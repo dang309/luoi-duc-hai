@@ -107,7 +107,7 @@ export function ProductDetailView() {
         <Grid xs={12} sm={6} md={6} lg={6}>
           <Stack spacing={1} divider={<Divider />}>
             <Typography variant="h6" component="h6">
-              Product's name
+              Product&apos;s name
             </Typography>
             <Typography variant='subtitle2' color='grey.600'>
               Kích thước: - Chiều rộng khổ: 1.0m, 1.2m, 1.4m, 1.8m, 2.1m, 2.5m, 2.7m, 3.3m, 4.2m -
