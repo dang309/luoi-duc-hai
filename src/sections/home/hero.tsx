@@ -10,10 +10,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
 const imgSources = [
-  'https://www.danguyen.site/_next/image?url=%2Fassets%2Fhome%2Fimage2.jpg&w=3840&q=75',
-  'https://www.danguyen.site/_next/image?url=%2Fassets%2Fhome%2Fimage2.jpg&w=3840&q=75',
-  'https://www.danguyen.site/_next/image?url=%2Fassets%2Fhome%2Fimage2.jpg&w=3840&q=75',
-  'https://www.danguyen.site/_next/image?url=%2Fassets%2Fhome%2Fimage2.jpg&w=3840&q=75',
+  'https://image.nhandan.vn/w800/Uploaded/2024/mftsffyrstl/2024_08_29/ndo_br_dt-khaosat-4979.jpg.webp',
 ];
 
 const StyledBox = styled('div')<{ imgSrc: string }>(({ theme, imgSrc }) => ({
