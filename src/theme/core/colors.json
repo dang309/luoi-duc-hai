@@ -1,18 +1,18 @@
 {
   "primary": {
-    "lighter": "#D0ECFE",
-    "light": "#73BAFB",
-    "main": "#1877F2",
-    "dark": "#0C44AE",
-    "darker": "#042174",
+    "lighter": "#86EE9E",
+    "light": "#42E568",
+    "main": "#1AC141",
+    "dark": "#117E2A",
+    "darker": "#083A13",
     "contrastText": "#FFFFFF"
   },
   "secondary": {
-    "lighter": "#EFD6FF",
-    "light": "#C684FF",
-    "main": "#8E33FF",
-    "dark": "#5119B7",
-    "darker": "#27097A",
+    "lighter": "#FFFFFF",
+    "light": "#FFFFE5",
+    "main": "#FEFF99",
+    "dark": "#FEFE4C",
+    "darker": "#FEFF00",
     "contrastText": "#FFFFFF"
   },
   "info": {

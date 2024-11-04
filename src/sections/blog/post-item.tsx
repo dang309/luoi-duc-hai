@@ -3,7 +3,6 @@ import type { CardProps } from '@mui/material/Card';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Card from '@mui/material/Card';
-import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
 import { fDate } from 'src/utils/format-time';
@@ -12,7 +11,6 @@ import { fShortenNumber } from 'src/utils/format-number';
 import { varAlpha } from 'src/theme/styles';
 
 import { Iconify } from 'src/components/iconify';
-import { SvgColor } from 'src/components/svg-color';
 
 // ----------------------------------------------------------------------
 
@@ -43,22 +41,6 @@ export function PostItem({
   latestPost: boolean;
   latestPostLarge: boolean;
 }) {
-  const renderAvatar = (
-    <Avatar
-      alt={post.author.name}
-      src={post.author.avatarUrl}
-      sx={{
-        left: 24,
-        zIndex: 9,
-        bottom: -24,
-        position: 'absolute',
-        ...((latestPostLarge || latestPost) && {
-          top: 24,
-        }),
-      }}
-    />
-  );
-
   const renderTitle = (
     <Link
       color="inherit"
@@ -70,10 +52,8 @@ export function PostItem({
         WebkitLineClamp: 2,
         display: '-webkit-box',
         WebkitBoxOrient: 'vertical',
+        color: 'common.white',
         ...(latestPostLarge && { typography: 'h5', height: 60 }),
-        ...((latestPostLarge || latestPost) && {
-          color: 'common.white',
-        }),
       }}
     >
       {post.title}
@@ -145,39 +125,20 @@ export function PostItem({
     </Typography>
   );
 
-  const renderShape = (
-    <SvgColor
-      width={88}
-      height={36}
-      src="/assets/icons/shape-avatar.svg"
-      sx={{
-        left: 0,
-        zIndex: 9,
-        bottom: -16,
-        position: 'absolute',
-        color: 'background.paper',
-        ...((latestPostLarge || latestPost) && { display: 'none' }),
-      }}
-    />
-  );
-
   return (
     <Card sx={sx} {...other}>
       <Box
         sx={(theme) => ({
           position: 'relative',
-          pt: 'calc(100% * 3 / 4)',
-          ...((latestPostLarge || latestPost) && {
-            pt: 'calc(100% * 4 / 3)',
-            '&:after': {
-              top: 0,
-              content: "''",
-              width: '100%',
-              height: '100%',
-              position: 'absolute',
-              bgcolor: varAlpha(theme.palette.grey['900Channel'], 0.72),
-            },
-          }),
+          pt: 'calc(100% * 4 / 3)',
+          '&:after': {
+            top: 0,
+            content: "''",
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            bgcolor: varAlpha(theme.palette.grey['900Channel'], 0.72),
+          },
           ...(latestPostLarge && {
             pt: {
               xs: 'calc(100% * 4 / 3)',
@@ -186,19 +147,15 @@ export function PostItem({
           }),
         })}
       >
-        {renderShape}
-        {renderAvatar}
         {renderCover}
       </Box>
 
       <Box
         sx={(theme) => ({
           p: theme.spacing(6, 3, 3, 3),
-          ...((latestPostLarge || latestPost) && {
-            width: 1,
-            bottom: 0,
-            position: 'absolute',
-          }),
+          width: 1,
+          bottom: 0,
+          position: 'absolute',
         })}
       >
         {renderDate}

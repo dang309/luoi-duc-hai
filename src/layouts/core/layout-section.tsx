@@ -1,6 +1,7 @@
 import type { Theme, SxProps, CSSObject } from '@mui/material/styles';
 
 import Box from '@mui/material/Box';
+import { Divider } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import GlobalStyles from '@mui/material/GlobalStyles';
 
@@ -45,14 +46,10 @@ export function LayoutSection({
 
       <Box id="root__layout" className={layoutClasses.root} sx={sx}>
         {sidebarSection}
-        <Box
-          display="flex"
-          flex="1 1 auto"
-          flexDirection="column"
-          className={layoutClasses.hasSidebar}
-        >
+        <Box display="flex" flex="1 1 auto" flexDirection="column">
           {headerSection}
           {children}
+          <Divider />
           {footerSection}
         </Box>
       </Box>

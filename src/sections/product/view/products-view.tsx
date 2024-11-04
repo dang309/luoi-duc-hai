@@ -1,17 +1,14 @@
 import { useState, useCallback } from 'react';
 
 import Box from '@mui/material/Box';
+import { Container } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import Pagination from '@mui/material/Pagination';
 import Typography from '@mui/material/Typography';
 
 import { _products } from 'src/_mock';
-import { DashboardContent } from 'src/layouts/dashboard';
 
 import { ProductItem } from '../product-item';
-import { ProductSort } from '../product-sort';
-import { CartIcon } from '../product-cart-widget';
-import { ProductFilters } from '../product-filters';
 
 import type { FiltersProps } from '../product-filters';
 
@@ -85,12 +82,10 @@ export function ProductsView() {
   );
 
   return (
-    <DashboardContent>
-      <Typography variant="h4" sx={{ mb: 5 }}>
-        Products
+    <Container sx={{ pt: { xs: 14, sm: 16 }, pb: { xs: 8, sm: 12 } }}>
+      <Typography variant="h4" sx={{ mb: 2 }}>
+        Tất cả sản phẩm
       </Typography>
-
-      <CartIcon totalItems={8} />
 
       <Box
         display="flex"
@@ -99,7 +94,7 @@ export function ProductsView() {
         justifyContent="flex-end"
         sx={{ mb: 5 }}
       >
-        <Box gap={1} display="flex" flexShrink={0} sx={{ my: 1 }}>
+        {/* <Box gap={1} display="flex" flexShrink={0} sx={{ my: 1 }}>
           <ProductFilters
             canReset={canReset}
             filters={filters}
@@ -127,11 +122,11 @@ export function ProductsView() {
               { value: 'priceAsc', label: 'Price: Low-High' },
             ]}
           />
-        </Box>
+        </Box> */}
       </Box>
 
       <Grid container spacing={3}>
-        {_products.map((product) => (
+        {_products.slice(0, 8).map((product) => (
           <Grid key={product.id} xs={12} sm={6} md={3}>
             <ProductItem product={product} />
           </Grid>
@@ -139,6 +134,6 @@ export function ProductsView() {
       </Grid>
 
       <Pagination count={10} color="primary" sx={{ mt: 8, mx: 'auto' }} />
-    </DashboardContent>
+    </Container>
   );
 }

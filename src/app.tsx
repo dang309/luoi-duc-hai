@@ -1,5 +1,11 @@
 import 'src/global.css';
 
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+import 'swiper/css/pagination';
+
 import Fab from '@mui/material/Fab';
 
 import { Router } from 'src/routes/sections';
